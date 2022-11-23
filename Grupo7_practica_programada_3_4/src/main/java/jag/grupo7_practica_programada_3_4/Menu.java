@@ -25,6 +25,8 @@ public class Menu extends javax.swing.JFrame {
         tit1 = new javax.swing.JLabel();
         add = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        RegistroVenta = new javax.swing.JButton();
+        consultaVenta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,7 +37,7 @@ public class Menu extends javax.swing.JFrame {
 
         add.setBackground(new java.awt.Color(85, 80, 155));
         add.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        add.setText("Registro");
+        add.setText("Registro producto");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
@@ -50,6 +52,24 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        RegistroVenta.setBackground(new java.awt.Color(85, 80, 155));
+        RegistroVenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        RegistroVenta.setText("Registrar Venta");
+        RegistroVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistroVentaActionPerformed(evt);
+            }
+        });
+
+        consultaVenta.setBackground(new java.awt.Color(85, 80, 155));
+        consultaVenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        consultaVenta.setText("Consultar una Venta");
+        consultaVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultaVentaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout mainpanelLayout = new javax.swing.GroupLayout(mainpanel);
         mainpanel.setLayout(mainpanelLayout);
         mainpanelLayout.setHorizontalGroup(
@@ -60,14 +80,18 @@ public class Menu extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(mainpanelLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(add)
+                        .addGap(76, 76, 76)
                         .addGroup(mainpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainpanelLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tit1)
+                                .addGap(0, 305, Short.MAX_VALUE))
                             .addGroup(mainpanelLayout.createSequentialGroup()
-                                .addGap(311, 311, 311)
-                                .addComponent(tit1)))
-                        .addGap(0, 305, Short.MAX_VALUE)))
+                                .addComponent(RegistroVenta)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(consultaVenta)
+                                .addGap(42, 42, 42)))))
                 .addContainerGap())
         );
         mainpanelLayout.setVerticalGroup(
@@ -76,7 +100,10 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addComponent(tit1)
                 .addGap(46, 46, 46)
-                .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(mainpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RegistroVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(consultaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
                 .addComponent(exit)
                 .addGap(15, 15, 15))
@@ -102,14 +129,30 @@ public class Menu extends javax.swing.JFrame {
         registrop registro = new registrop();
         registro.setVisible(true);
         registro.setLocationRelativeTo(this);
+     
     }//GEN-LAST:event_addActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         dispose();
     }//GEN-LAST:event_exitActionPerformed
 
+    private void RegistroVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroVentaActionPerformed
+          
+        Ventap Venta = new Ventap();
+        Venta.setVisible(true);
+        Venta.setLocationRelativeTo(this);
+    }//GEN-LAST:event_RegistroVentaActionPerformed
+
+    private void consultaVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaVentaActionPerformed
+         VerVenta VerVenta = new VerVenta();
+            VerVenta.setVisible(true);
+            VerVenta.setLocationRelativeTo(this);
+    }//GEN-LAST:event_consultaVentaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton RegistroVenta;
     private javax.swing.JButton add;
+    private javax.swing.JButton consultaVenta;
     private javax.swing.JButton exit;
     private javax.swing.JPanel mainpanel;
     private javax.swing.JLabel tit1;

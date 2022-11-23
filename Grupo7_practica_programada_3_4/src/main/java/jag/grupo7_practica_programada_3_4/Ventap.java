@@ -4,9 +4,9 @@ package jag.grupo7_practica_programada_3_4;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class registrop extends javax.swing.JFrame {
+public class Ventap extends javax.swing.JFrame {
 data ma = new data();
-    public registrop() {
+    public Ventap() {
         initComponents();
     }
 
@@ -20,7 +20,7 @@ data ma = new data();
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        titulo = new javax.swing.JLabel();
+        tituloregistro = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
@@ -28,18 +28,19 @@ data ma = new data();
         txtNombre = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
         cmbMarca = new javax.swing.JComboBox<>();
-        btnVer = new javax.swing.JButton();
+        txtCedula = new javax.swing.JTextField();
+        introCedula = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(70, 150, 150));
 
-        titulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        titulo.setText("Registrar un Producto");
+        tituloregistro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        tituloregistro.setText("Registre una Venta ");
 
-        jLabel2.setText("Precio del producto");
+        jLabel2.setText("Precio del producto vendido");
 
-        jLabel3.setText("Nombre del producto");
+        jLabel3.setText("Nombre del producto vendido");
 
         btnRegresar.setBackground(new java.awt.Color(78, 0, 0));
         btnRegresar.setText("Regresar");
@@ -64,13 +65,9 @@ data ma = new data();
         cmbMarca.setBackground(new java.awt.Color(85, 80, 155));
         cmbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hellmans", "Lizano", "Tio pelon", "CrustymacTosty", "Tropical" }));
 
-        btnVer.setBackground(new java.awt.Color(0, 150, 0));
-        btnVer.setText("Ver Lista");
-        btnVer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerActionPerformed(evt);
-            }
-        });
+        txtCedula.setBackground(new java.awt.Color(85, 80, 155));
+
+        introCedula.setText("Introduzca su cedula");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,10 +81,9 @@ data ma = new data();
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRegistrar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 245, Short.MAX_VALUE)
-                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(101, 101, 101)
-                        .addComponent(btnVer)))
+                        .addGap(0, 273, Short.MAX_VALUE)
+                        .addComponent(tituloregistro, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(175, 175, 175)))
                 .addGap(28, 28, 28))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,29 +93,33 @@ data ma = new data();
                             .addComponent(cmbMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
-                                .addComponent(txtPrecio, javax.swing.GroupLayout.Alignment.TRAILING))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(333, 333, 333)
-                        .addComponent(jLabel3))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtPrecio, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtCedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(332, 332, 332)
-                        .addComponent(jLabel2)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(introCedula)
+                            .addComponent(jLabel3))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(titulo)
-                    .addComponent(btnVer))
-                .addGap(26, 26, 26)
-                .addComponent(jLabel3)
+                .addComponent(tituloregistro)
+                .addGap(35, 35, 35)
+                .addComponent(introCedula)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,21 +152,16 @@ data ma = new data();
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         int precio=Integer.parseInt(txtPrecio.getText());
+        int Cedula=Integer.parseInt(txtCedula.getText());
         String nombre=txtNombre.getText();
         String marca=(String)cmbMarca.getSelectedItem();
          Productos product = new Productos(nombre, precio, marca);   
          ma.EscribirArchivos(product);
        txtPrecio.setText("");
+       txtCedula.setText("");
        txtNombre.setText("");
        cmbMarca.setSelectedIndex(0);
     }//GEN-LAST:event_btnRegistrarActionPerformed
-
-    private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
-        // TODO add your handling code here:
-         VerRegistro verRegistro = new VerRegistro();
-            verRegistro.setVisible(true);
-            verRegistro.setLocationRelativeTo(this);
-    }//GEN-LAST:event_btnVerActionPerformed
 
                                  
         
@@ -175,12 +170,13 @@ data ma = new data();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton btnVer;
     private javax.swing.JComboBox<String> cmbMarca;
+    private javax.swing.JLabel introCedula;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel titulo;
+    private javax.swing.JLabel tituloregistro;
+    private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPrecio;
     // End of variables declaration//GEN-END:variables

@@ -5,19 +5,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
-public class VerRegistro extends javax.swing.JFrame {
+public class VerVenta extends javax.swing.JFrame {
 
     data ma = new data();
-    public VerRegistro() {
+    public VerVenta() {
         initComponents();
-        ArrayList<Productos> product = ma.LeerDatosDeArchivo();
+        ArrayList<Venta> ventas = ma.LeerDatosDeArchivo();
         DefaultTableModel modelo = new DefaultTableModel();
         
+        modelo.addColumn("Cedula");
         modelo.addColumn("Nombre");
         modelo.addColumn("Marca");
         modelo.addColumn("Precio");
-        for (int i = 0; i < product.size(); i++) {
-            modelo.addRow(new Object[]{product.get(i).getNombre(),product.get(i).getMarca(),product.get(i).getPrecio()});
+        for (int i = 0; i < ventas.size(); i++) {
+            modelo.addRow(new Object[]{ventas.get(i).getCedula(),ventas.get(i).getNombre(),ventas.get(i).getMarca(),ventas.get(i).getPrecio()});
         }
         data.setModel(modelo);
     }
@@ -49,26 +50,26 @@ public class VerRegistro extends javax.swing.JFrame {
         data.setBackground(new java.awt.Color(100, 73, 250));
         data.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Marca", "Precio"
+                "Nombre", "Marca", "Precio", "Cedula"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -81,7 +82,7 @@ public class VerRegistro extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(data);
 
-        jLabel1.setText("Datos de los productos registrados");
+        jLabel1.setText("Datos de la venta registrada");
 
         javax.swing.GroupLayout paneldataLayout = new javax.swing.GroupLayout(paneldata);
         paneldata.setLayout(paneldataLayout);
