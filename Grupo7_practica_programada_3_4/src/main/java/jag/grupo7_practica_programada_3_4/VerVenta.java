@@ -7,18 +7,18 @@ import javax.swing.table.DefaultTableModel;
 
 public class VerVenta extends javax.swing.JFrame {
 
-    data ma = new data();
+    data1 ma = new data1();
     public VerVenta() {
         initComponents();
-        ArrayList<Venta> ventas = ma.LeerDatosDeArchivo();
+        ArrayList<Venta> sell = ma.Leer();
         DefaultTableModel modelo = new DefaultTableModel();
         
         modelo.addColumn("Cedula");
         modelo.addColumn("Nombre");
         modelo.addColumn("Marca");
         modelo.addColumn("Precio");
-        for (int i = 0; i < ventas.size(); i++) {
-            modelo.addRow(new Object[]{ventas.get(i).getCedula(),ventas.get(i).getNombre(),ventas.get(i).getMarca(),ventas.get(i).getPrecio()});
+        for (int i = 0; i < sell.size(); i++) {
+            modelo.addRow(new Object[]{sell.get(i).getCedula(),sell.get(i).getNombre(),sell.get(i).getMarca(),sell.get(i).getPrecio()});
         }
         data.setModel(modelo);
     }
