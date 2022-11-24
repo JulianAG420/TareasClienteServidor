@@ -44,7 +44,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        exit.setBackground(new java.awt.Color(255, 0, 0));
+        exit.setBackground(new java.awt.Color(51, 0, 153));
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
