@@ -20,7 +20,7 @@ public class VerVenta extends javax.swing.JFrame {
         for (int i = 0; i < sell.size(); i++) {
             modelo.addRow(new Object[]{sell.get(i).getCedula(),sell.get(i).getNombre(),sell.get(i).getMarca(),sell.get(i).getPrecio()});
         }
-        data.setModel(modelo);
+        data1.setModel(modelo);
     }
 
     /**
@@ -35,7 +35,7 @@ public class VerVenta extends javax.swing.JFrame {
         paneldata = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        data = new javax.swing.JTable();
+        data1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,8 +47,8 @@ public class VerVenta extends javax.swing.JFrame {
             }
         });
 
-        data.setBackground(new java.awt.Color(100, 73, 250));
-        data.setModel(new javax.swing.table.DefaultTableModel(
+        data1.setBackground(new java.awt.Color(100, 73, 250));
+        data1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -80,7 +80,7 @@ public class VerVenta extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(data);
+        jScrollPane1.setViewportView(data1);
 
         jLabel1.setText("Datos de la venta registrada");
 
@@ -133,7 +133,7 @@ public class VerVenta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
-    private javax.swing.JTable data;
+    private javax.swing.JTable data1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel paneldata;

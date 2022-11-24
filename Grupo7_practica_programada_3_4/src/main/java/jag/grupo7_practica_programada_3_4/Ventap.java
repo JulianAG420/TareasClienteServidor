@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Ventap extends javax.swing.JFrame {
-data ma = new data();
+data1 ma = new data1();
     public Ventap() {
         initComponents();
     }
@@ -155,8 +155,8 @@ data ma = new data();
         int Cedula=Integer.parseInt(txtCedula.getText());
         String nombre=txtNombre.getText();
         String marca=(String)cmbMarca.getSelectedItem();
-         Productos product = new Productos(nombre, precio, marca);   
-         ma.EscribirArchivos(product);
+         Venta sell = new Venta(nombre, precio, marca,Cedula);   
+         ma.Escribir(sell);
        txtPrecio.setText("");
        txtCedula.setText("");
        txtNombre.setText("");

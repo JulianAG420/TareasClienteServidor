@@ -37,14 +37,14 @@ import java.io.ObjectInputStream;
     }
 
     public ArrayList<Venta> Leer() {
-        ArrayList<Venta> datos = new ArrayList<>();
+        ArrayList<Venta> datos1 = new ArrayList<>();
         try {
             ObjectInputStream s = new ObjectInputStream(new FileInputStream("Ventas.txt"));
 
             Venta sell = null;
             sell = (Venta) s.readObject();
             while (sell != null) {
-                datos.add(sell);
+                datos1.add(sell);
                 sell = (Venta) s.readObject();
             }
             s.close();
@@ -53,9 +53,9 @@ import java.io.ObjectInputStream;
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(data1.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            System.out.println(datos);
+            System.out.println(datos1);
         }
-        return datos;
+        return datos1;
     }
 }
 
