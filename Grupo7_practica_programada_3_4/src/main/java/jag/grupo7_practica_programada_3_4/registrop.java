@@ -64,7 +64,7 @@ data ma = new data();
         cmbMarca.setBackground(new java.awt.Color(85, 80, 155));
         cmbMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hellmans", "Lizano", "Tio pelon", "CrustymacTosty", "Tropical" }));
 
-        btnVer.setBackground(new java.awt.Color(0, 150, 0));
+        btnVer.setBackground(new java.awt.Color(102, 0, 102));
         btnVer.setText("Ver Lista");
         btnVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
